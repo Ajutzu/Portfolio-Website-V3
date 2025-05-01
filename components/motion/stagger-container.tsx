@@ -5,14 +5,12 @@ import { motion } from 'framer-motion'
 interface StaggerContainerProps {
     children: React.ReactNode
     delay?: number
-    duration?: number
     className?: string
 }
 
 export function StaggerContainer({ 
     children, 
     delay = 0, 
-    duration = 0.5, 
     className 
 }: StaggerContainerProps) {
     return (

@@ -78,7 +78,7 @@ export function MusicPlayer() {
               No, thanks
             </Button>
             <Button onClick={handleStartMusic}>
-              Yes, let's go!
+              Yes, let&apos;s go!
             </Button>
           </DialogFooter>
         </DialogContent>

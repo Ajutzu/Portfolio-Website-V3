@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Techs from "./Techs";
-import { FadeIn, SlideIn } from "@/components/motion";
+import { FadeIn } from "@/components/motion";
 
 function Hero() {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
