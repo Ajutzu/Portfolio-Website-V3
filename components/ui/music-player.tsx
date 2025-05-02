@@ -17,7 +17,6 @@ import Image from "next/image"
 
 export function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false)
-  const [volume, setVolume] = useState(50)
   const [showWelcome, setShowWelcome] = useState(true)
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
@@ -26,7 +25,6 @@ export function MusicPlayer() {
   useEffect(() => {
     // Initialize audio element
     audioRef.current = new Audio("/music/music.mp3")
-    audioRef.current.volume = volume / 100
 
     const updateTime = () => {
       if (audioRef.current) {
@@ -51,11 +49,6 @@ export function MusicPlayer() {
     }
   }, [])
 
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = volume / 100
-    }
-  }, [volume])
 
   const togglePlay = () => {
     if (audioRef.current) {
