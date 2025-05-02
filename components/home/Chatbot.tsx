@@ -6,7 +6,6 @@ import { Send, MessageCircle } from "lucide-react"
 import Image from "next/image"
 import { GoogleGenerativeAI } from "@google/generative-ai"
 
-// Message type for chat history
 interface Message {
   sender: "user" | "bot"
   text: string
