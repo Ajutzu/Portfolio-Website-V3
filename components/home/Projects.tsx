@@ -54,7 +54,7 @@ function Projects() {
             onClick={() => setShowAllProjects(!showAllProjects)}
             className="flex items-center gap-1 w-fit"
           >
-            {showAllProjects ? "Show Less" : "View More"}
+            {showAllProjects ? "SHOW LESS" : "VIEW MORE"}
             <ChevronRight
               className={`h-4 w-4 transition-transform ${
                 showAllProjects ? "rotate-90" : ""
@@ -122,7 +122,7 @@ function ProjectCard({ project }: ProjectCardProps) {
             size="sm"
             className="w-full bg-primary text-white hover:bg-primary/10 hover:text-primary hover:border-primary transition-all duration-300"
           >
-            View Creation
+            VIEW CREATION
             <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
           </Button>
         </Link>

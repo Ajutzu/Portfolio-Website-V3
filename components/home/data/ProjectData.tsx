@@ -17,6 +17,14 @@ export const allProjects = [
   },
   {
     id: 3,
+    title: "CUTIS V1 - LANDING PAGE",
+    description: "Responsive landing page with React.",
+    image: "/projects/CutisLanding.png",
+    link: "https://cutis-ai-derma-agent.vercel.app/",
+    technologies: ["REACT", "BOOTSTRAP", "GEMINI API"],
+  },
+  {
+    id: 4,
     title: "PORTFOLIO V2",
     description: "Portfolio website with React, Google Analytics and Gemini Integration.",
     image: "/projects/portfolioV2.png",
@@ -24,7 +32,7 @@ export const allProjects = [
     technologies: ["REACT", "BOOTSTRAP", "GEMINI API"],
   },
   {
-    id: 4,
+    id: 5,
     title: "ABUS - DBMS PROJECT",
     description: "Appointment and booking system for resorts and hotels.",
     image: "/projects/abus.png",
@@ -32,7 +40,7 @@ export const allProjects = [
     technologies: ["PHP", "HTML", "CSS", "JS", "POSTGRESQL", "PYTHON"],
   },
   {
-    id: 5,
+    id: 6,
     title: "TIMESAND",
     description: "To-Do List app with local storage for task management.",
     image: "/projects/toDoList.png",
@@ -40,7 +48,7 @@ export const allProjects = [
     technologies: ["HTML", "CSS", "BOOTSTRAP", "JS"],
   },
   {
-    id: 6,
+    id: 7,
     title: "CHAT BOT",
     description: "Simple Python chat bot with predefined responses.",
     image: "/projects/chatBot.png",
@@ -48,7 +56,7 @@ export const allProjects = [
     technologies: ["PYTHON"],
   },
   {
-    id: 7,
+    id: 8,
     title: "PORTFOLIO V1",
     description: "Simple portfolio website with Google Analytics and JS Bot.",
     image: "/projects/portfolioV1.png",
@@ -56,8 +64,8 @@ export const allProjects = [
     technologies: ["HTML", "CSS", "JS"],
   },
   {
-    id: 8,
-    title: "LANDING PAGE",
+    id: 9,
+    title: "RIMBERIO - LANDING PAGE",
     description: "Responsive landing page with Bootstrap.",
     image: "/projects/landingPage.png",
     link: "https://activity-1-bootstrap-wts.pages.dev/",

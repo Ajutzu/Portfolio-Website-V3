@@ -48,7 +48,7 @@ function Certificates() {
             onClick={() => setShowAllCertifications(!showAllCertifications)}
             className="flex items-center gap-1 w-fit"
           >
-            {showAllCertifications ? "Show Less" : "View More"}
+            {showAllCertifications ? "SHOW LESS" : "VIEW MORE"}
             <ChevronRight
               className={`h-4 w-4 transition-transform ${
                 showAllCertifications ? "rotate-90" : ""
@@ -105,7 +105,7 @@ function CertificationCard({ certification }: CertificationCardProps) {
             size="sm"
             className="w-full bg-primary text-white hover:bg-primary/10 hover:text-primary hover:border-primary transition-all duration-300"
           >
-            View Certificate
+            VIEW CERTIFICATE
             <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
           </Button>
         </Link>

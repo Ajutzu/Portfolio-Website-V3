@@ -11,13 +11,16 @@ import {
   DialogFooter,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { Music, Pause, Play, Volume2 } from "lucide-react"
+import { Music, Pause, Play} from "lucide-react"
 import { Slider } from "@/components/ui/slider"
+import Image from "next/image"
 
 export function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [volume, setVolume] = useState(50)
   const [showWelcome, setShowWelcome] = useState(true)
+  const [currentTime, setCurrentTime] = useState(0)
+  const [duration, setDuration] = useState(0)
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
   useEffect(() => {
@@ -25,9 +28,24 @@ export function MusicPlayer() {
     audioRef.current = new Audio("/music/music.mp3")
     audioRef.current.volume = volume / 100
 
+    const updateTime = () => {
+      if (audioRef.current) {
+        setCurrentTime(audioRef.current.currentTime)
+        setDuration(audioRef.current.duration)
+      }
+    }
+
+    audioRef.current.addEventListener('timeupdate', updateTime)
+    audioRef.current.addEventListener('loadedmetadata', () => {
+      if (audioRef.current) {
+        setDuration(audioRef.current.duration)
+      }
+    })
+
     return () => {
       if (audioRef.current) {
         audioRef.current.pause()
+        audioRef.current.removeEventListener('timeupdate', updateTime)
         audioRef.current = null
       }
     }
@@ -54,6 +72,13 @@ export function MusicPlayer() {
     setVolume(value[0])
   }
 
+  const handleProgressChange = (value: number[]) => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = value[0]
+      setCurrentTime(value[0])
+    }
+  }
+
   const handleStartMusic = () => {
     setShowWelcome(false)
     if (audioRef.current) {
@@ -62,11 +87,17 @@ export function MusicPlayer() {
     }
   }
 
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60)
+    const seconds = Math.floor(time % 60)
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`
+  }
+
   return (
     <>
       {/* Welcome Dialog */}
       <Dialog open={showWelcome} onOpenChange={setShowWelcome}>
-        <DialogContent className="fixed top-4 right-4 w-[300px] translate-x-0 translate-y-0">
+        <DialogContent className="fixed top-4 right-4 w-[340px] translate-x-0 translate-y-0 rounded-2xl shadow-2xl border border-blue-200">
           <DialogHeader>
             <DialogTitle>Welcome to My Portfolio!</DialogTitle>
             <DialogDescription>
@@ -95,35 +126,59 @@ export function MusicPlayer() {
             <Music className="h-5 w-5" />
           </Button>
         </DialogTrigger>
-        <DialogContent className="fixed top-4 right-4 w-[300px] translate-x-0 translate-y-0">
-          <DialogHeader>
-            <DialogTitle asChild><h2 className="text-primary">Music Player</h2></DialogTitle>
-          </DialogHeader>
-          <div className="grid gap-4 py-4">
-            <div className="flex items-center justify-center gap-4">
+        <DialogContent className="fixed top-4 right-4 w-[370px] max-w-full translate-x-0 translate-y-0 rounded-2xl shadow-2xl border border-blue-200 p-0">
+         
+          <DialogTitle></DialogTitle>
+          
+          <div className="flex flex-col items-center px-6 py-6">
+            {/* Album Art */}
+            <div className="relative h-40 w-40 mb-4 rounded-xl overflow-hidden shadow-lg border-4 border-white">
+              <Image
+                src="/images/music.png"
+                alt="Tensura Opening 1"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+
+            {/* Song Info */}
+            <div className="text-center mb-4">
+              <h3 className="text-xl font-bold text-gray-900">Tensura Opening 1</h3>
+              <p className="text-sm text-gray-500">Takuma Terashima</p>
+            </div>
+
+            {/* Progress Bar */}
+            <div className="w-full mb-2">
+              <Slider
+                value={[currentTime]}
+                onValueChange={handleProgressChange}
+                max={duration}
+                step={1}
+                className="w-full accent-blue-500"
+              />
+              <div className="flex justify-between text-xs text-gray-400 mt-1">
+                <span>{formatTime(currentTime)}</span>
+                <span>{formatTime(duration)}</span>
+              </div>
+            </div>
+
+            {/* Controls */}
+            <div className="flex items-center justify-center gap-6 my-4">
               <Button
                 variant="outline"
                 size="icon"
-                className="h-12 w-12 rounded-full"
+                className="h-16 w-16 rounded-full flex items-center justify-center bg-white shadow-md border-2 border-blue-200 hover:bg-blue-100"
                 onClick={togglePlay}
               >
                 {isPlaying ? (
-                  <Pause className="h-6 w-6" />
+                  <Pause className="h-8 w-8 text-blue-500" />
                 ) : (
-                  <Play className="h-6 w-6" />
+                  <Play className="h-8 w-8 text-blue-500" />
                 )}
               </Button>
             </div>
-            <div className="flex items-center gap-4">
-              <Volume2 className="h-5 w-5" />
-              <Slider
-                value={[volume]}
-                onValueChange={handleVolumeChange}
-                max={100}
-                step={1}
-                className="w-full"
-              />
-            </div>
+
           </div>
         </DialogContent>
       </Dialog>

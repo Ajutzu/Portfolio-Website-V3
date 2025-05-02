@@ -33,7 +33,7 @@ export default function Pricing() {
               </div>
 
               <Button asChild variant="outline" className="w-full">
-                <Link href="https://www.facebook.com/profile.php?id=100019377120085">Message Me</Link>
+                <Link href="https://www.facebook.com/profile.php?id=100019377120085">MESSAGE ME</Link>
               </Button>
 
               <hr className="border-dashed" />
@@ -68,7 +68,7 @@ export default function Pricing() {
                 </div>
 
                 <Button asChild className="w-full">
-                  <Link href="https://www.facebook.com/profile.php?id=100019377120085">Message Now</Link>
+                  <Link href="https://www.facebook.com/profile.php?id=100019377120085">MESSAGE NOW</Link>
                 </Button>
               </div>
 

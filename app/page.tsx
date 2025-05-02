@@ -5,6 +5,7 @@ import Footer from "@/components/home/Footer";
 import Projects from "@/components/home/Projects";
 import Certificates from "@/components/home/Certificates";
 import Timeline from "@/components/home/Timeline";
+import Chatbot from "@/components/home/Chatbot";
 
 export default function Home() {
 
@@ -16,6 +17,7 @@ export default function Home() {
     <Projects />
     <Certificates />
     <Pricing />
+    <Chatbot />
     <Footer />
    </>
   )

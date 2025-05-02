@@ -8,15 +8,15 @@ const experiences = [
   {
     id: 1,
     date: "Feb 10, 2025",
-    title: "Tech Executive Labs",
-    description: "Web Dev Intern - Working on real-world projects involving modern web technologies. My role is to lead and includes developing scalable applications, optimizing performance, and collaborating on software architecture.",
+    title: "TECH EXECUTIVE LABS",
+    description: "Web Dev Intern - I was chosen to lead the creation of the company website. Developed a web application using the MERN stack, with MySQL instead of MongoDB. Created a simple pipeline using GitHub Actions, Vercel, and Render.",
     icon: Code,
   },
   {
     id: 2,
     date: "January 15, 2025",
-    title: "WEB DEV - FREE LANCE",
-    description: "Building web applications and APIs for clients. My work spans full-stack development, integrating REST APIs, and ensuring responsive UI/UX.",
+    title: "WEB DEV - FREELANCE",
+    description: "Built web systems and websites according to client needs. Most of the websites I created were built with PHP since it's commonly used in universities in the Philippines.",
     icon: Briefcase,
   },
 ]
