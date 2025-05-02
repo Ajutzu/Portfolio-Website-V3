@@ -19,7 +19,7 @@ function Hero() {
   return (
     <section id="home">
       <div className="pb-24 pt-12 md:pb-15 lg:pb-15 lg:pt-44">
-        <div className="relative mx-auto flex max-w-6xl flex-col lg:flex-row px-6 lg:block">
+        <div className="relative mx-auto max-w-6xl rounded-3xl px-6">
           <div className="mx-auto max-w-lg text-center lg:ml-0 lg:w-1/2 lg:text-left">
             <FadeIn delay={0.2}>
               <h1 className="mt-8 max-w-2xl text-primary text-5xl font-medium md:text-6xl lg:mt-16 xl:text-7xl">

@@ -37,7 +37,7 @@ function Certificates() {
   return (
     <section id="certificates" className="py-15 relative mx-auto flex max-w-6xl flex-col px-6 lg:block">
       <FadeIn delay={0.2}>
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
           <div className="flex items-center gap-2">
             <Award className="h-6 w-6 text-primary" />
             <h2 className="text-3xl font-bold text-primary">CERTIFICATIONS</h2>
@@ -46,7 +46,7 @@ function Certificates() {
           <Button
             variant="ghost"
             onClick={() => setShowAllCertifications(!showAllCertifications)}
-            className="flex items-center gap-1"
+            className="flex items-center gap-1 w-fit"
           >
             {showAllCertifications ? "Show Less" : "View More"}
             <ChevronRight
@@ -73,20 +73,22 @@ function Certificates() {
 
 function CertificationCard({ certification }: CertificationCardProps) {
   return (
-    <Card className="h-full bg-background flex flex-col">
-      <CardHeader>
+    <Card className="h-full bg-background flex flex-col group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+      <CardHeader className="relative">
         <div className="flex items-center gap-4">
-          <div className="relative h-12 w-12 shrink-0">
+          <div className="relative h-12 w-12 shrink-0 group-hover:scale-110 transition-transform duration-300">
             <Image
               src={certification.image || "/placeholder.svg"}
               alt={certification.issuer}
               fill
-              className="object-contain rounded-2xl"
+              className="object-contain rounded-2xl group-hover:brightness-110 transition-all duration-300"
             />
           </div>
           <div>
-            <CardTitle className="text-lg">{certification.title}</CardTitle>
-            <CardDescription>
+            <CardTitle className="text-primary/80 transition-colors duration-300">
+              <h5>{certification.title}</h5>
+            </CardTitle>
+            <CardDescription className="group-hover:text-foreground/80 transition-colors duration-300">
               {certification.issuer} • {certification.date}
             </CardDescription>
           </div>
@@ -98,9 +100,13 @@ function CertificationCard({ certification }: CertificationCardProps) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" size="sm" className="w-full">
+          <Button 
+            variant="default"
+            size="sm"
+            className="w-full bg-primary text-white hover:bg-primary/10 hover:text-primary hover:border-primary transition-all duration-300"
+          >
             View Certificate
-            <ExternalLink className="ml-2 h-4 w-4" />
+            <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
           </Button>
         </Link>
       </CardFooter>

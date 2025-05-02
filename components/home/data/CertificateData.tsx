@@ -1,7 +1,7 @@
 export const allCertifications = [
   {
     id: 4,
-    title: "The Complete Full-Stack Web Development Bootcamp",
+    title: "THE COMPLETE FULL-STACK WEB DEVELOPMENT BOOTCAMP",
     issuer: "Udemy",
     date: "2025",
     image: "/images/Udemy.png",
@@ -9,7 +9,7 @@ export const allCertifications = [
   },
   {
     id: 1,
-    title: "JavaScript Algorithms and  Data Structures",
+    title: "JAVASCRIPT ALGORITHMS AND  DATA STRUCTURES",
     issuer: "freeCodeCamp",
     date: "2024",
     image: "/images/FreeCodeCamp.png",
@@ -17,7 +17,7 @@ export const allCertifications = [
   },
   {
     id: 2,
-    title: "CSS Complete Course For Beginners",
+    title: "CSS COMPLETE COURSE FOR BEGINNERS",
     issuer: "Udemy",
     date: "2023",
     image: "/images/Udemy.png",
@@ -25,7 +25,7 @@ export const allCertifications = [
   },
   {
     id: 3,
-    title: "HTML For Beginners",
+    title: "HTML FOR BEGINNERS",
     issuer: "Udemy",
     date: "2023",
     image: "/images/Udemy.png",
