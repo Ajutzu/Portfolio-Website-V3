@@ -68,10 +68,6 @@ export function MusicPlayer() {
     }
   }
 
-  const handleVolumeChange = (value: number[]) => {
-    setVolume(value[0])
-  }
-
   const handleProgressChange = (value: number[]) => {
     if (audioRef.current) {
       audioRef.current.currentTime = value[0]
