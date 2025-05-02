@@ -7,14 +7,14 @@ import { StaggerContainer, StaggerItem, FadeIn } from "@/components/motion"
 const experiences = [
   {
     id: 1,
-    date: "Feb 10, 2024",
-    title: "WEB DEV - INTERN",
-    description: "Working on real-world projects involving modern web technologies. My role is to lead and includes developing scalable applications, optimizing performance, and collaborating on software architecture.",
+    date: "Feb 10, 2025",
+    title: "Tech Executive Labs",
+    description: "Web Dev Intern - Working on real-world projects involving modern web technologies. My role is to lead and includes developing scalable applications, optimizing performance, and collaborating on software architecture.",
     icon: Code,
   },
   {
     id: 2,
-    date: "January 15, 2024",
+    date: "January 15, 2025",
     title: "WEB DEV - FREE LANCE",
     description: "Building web applications and APIs for clients. My work spans full-stack development, integrating REST APIs, and ensuring responsive UI/UX.",
     icon: Briefcase,

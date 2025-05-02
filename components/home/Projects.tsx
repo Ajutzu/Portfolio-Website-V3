@@ -83,7 +83,7 @@ function ProjectCard({ project }: ProjectCardProps) {
       <CardHeader className="px-2 relative">
         <div className="relative h-48 w-full overflow-hidden">
           <Image
-            src="/images/rimuru.png"
+            src="/images/Tensura.png"
             alt="Rimuru"
             fill
             className="object-cover rounded-sm transition-all duration-300 group-hover:opacity-0"
