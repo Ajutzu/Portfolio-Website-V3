@@ -83,16 +83,10 @@ function ProjectCard({ project }: ProjectCardProps) {
       <CardHeader className="px-2 relative">
         <div className="relative h-48 w-full overflow-hidden">
           <Image
-            src="/images/Tensura.png"
-            alt="Rimuru"
-            fill
-            className="object-cover rounded-sm transition-all duration-300 group-hover:opacity-0"
-          />
-          <Image
             src={project.image || "/placeholder.svg"}
             alt={project.title}
             fill
-            className="object-cover rounded-sm transition-all duration-300 opacity-0 group-hover:opacity-100"
+            className="object-cover rounded-sm"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
